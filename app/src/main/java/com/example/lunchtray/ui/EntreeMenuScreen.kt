@@ -16,7 +16,7 @@ fun EntreeMenuScreen(
     options: List<MenuItem.EntreeItem>,
     onCancelButtonClicked: () -> Unit,
     onNextButtonClicked: () -> Unit,
-    onSelectionChanged: (MenuItem) -> Unit,
+    onSelectionChanged: (MenuItem.EntreeItem) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val onSelectionChangedAsMenuItem: (MenuItem) -> Unit = { item ->
@@ -26,7 +26,7 @@ fun EntreeMenuScreen(
         options = options,
         onCancelButtonClicked = onCancelButtonClicked,
         onNextButtonClicked = onNextButtonClicked,
-        onSelectionChanged = onSelectionChangedAsMenuItem,//onSelectionChanged as (MenuItem) -> Unit,
+        onSelectionChanged = onSelectionChanged as (MenuItem) -> Unit,
         modifier = modifier
     )
 }
